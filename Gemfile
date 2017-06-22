@@ -38,8 +38,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Nokogiri for webscraping
 gem 'nokogiri'
-gem 'open_uri_redirections'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'twilio-ruby'
 
 
 
