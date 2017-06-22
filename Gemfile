@@ -45,7 +45,7 @@ gem 'twilio-ruby'
 
 gem 'client_side_validations'
 
-gem 'whenever'
+gem 'whenever',  :require => false
 
 
 group :development, :test do
