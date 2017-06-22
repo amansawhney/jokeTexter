@@ -34,6 +34,7 @@ class WelcomeController < ApplicationController
       message = @client.account.messages.create(:body => params[:message],
                                                 :to => "+1"+params[:number],    # Replace with your phone number
                                                 :from => '+15168304249')  # Replace with your Twilio number
+      @user = User.new(:phone => params[:number])
       puts message.sid
     end
   end
