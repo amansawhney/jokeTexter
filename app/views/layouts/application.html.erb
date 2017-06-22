@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>JokeTexter</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,13 @@
   </head>
 
   <body>
+  <div class="container">
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+
   </body>
 </html>
