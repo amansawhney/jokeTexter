@@ -36,6 +36,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 
+# Use Nokogiri for webscraping
+gem 'nokogiri'
+gem 'open_uri_redirections'
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
