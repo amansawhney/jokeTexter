@@ -27,11 +27,9 @@
         <%= form_tag("/sms/send", method: "post") do %>
             <div class="form-group">
               <label for="formGroupExampleInput2">Your Number</label>
-              <%= text_field_tag(:number) %>
+              <%= telephone_field_tag(:number), validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" } %>
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <!-- add form elements here -->
+                <button type="submit" class="btn btn-primary" >Submit</button>
         <% end %>
       </div>
     </div>
