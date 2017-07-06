@@ -28,9 +28,11 @@ module ApplicationHelper
       message = @client.account.messages.create(:body => message,
                                                 :to => phone_number,    # Replace with your phone number
                                                 :from => '+15168304249')  # Replace with your Twilio number
-      user = User.new(:phone => phone_number)
-      user.save(:validate => false)
-      puts message.sid
+      if (User.find_by_phone(:phone) == nil)
+        user = User.new(:phone => phone_number)
+        user.save(:validate => false)
+        puts message.sid
+      end
     end
   end
 

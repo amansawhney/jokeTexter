@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: filmtimer_development
+  database: jokeTexter_development
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,5 +43,5 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: filmtimer_test
+  database: jokeTexter_test
   host: localhost
