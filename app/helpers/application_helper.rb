@@ -23,6 +23,7 @@ module ApplicationHelper
     end
     if valid?(phone_number)
       message = scrape()
+      cookies[:message] = message
 
       @client = Twilio::REST::Client.new ENV["twilo_sid"], ENV["twilo_auth_token"]
       message = @client.account.messages.create(:body => message,
