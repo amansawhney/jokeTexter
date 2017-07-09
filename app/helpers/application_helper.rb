@@ -2,7 +2,7 @@ module ApplicationHelper
   include WelcomeHelper
 
   def valid?(phone_number)
-    lookup_client = Twilio::REST::LookupsClient.new('ACeb53ee5949c9b6fb0144ee2950640007', '29900cb6ccbdd5cf37d2f0be4ea26778')
+    lookup_client = Twilio::REST::LookupsClient.new(ENV["twilo_sid"], ENV["twilo_auth_token"])
     begin
       response = lookup_client.phone_numbers.get(phone_number)
       response.phone_number #if invalid, throws an exception. If valid, no problems.
@@ -24,7 +24,7 @@ module ApplicationHelper
     if valid?(phone_number)
       message = scrape()
 
-      @client = Twilio::REST::Client.new 'ACeb53ee5949c9b6fb0144ee2950640007', '29900cb6ccbdd5cf37d2f0be4ea26778'
+      @client = Twilio::REST::Client.new ENV["twilo_sid"], ENV["twilo_auth_token"]
       message = @client.account.messages.create(:body => message,
                                                 :to => phone_number,    # Replace with your phone number
                                                 :from => '+15168304249')  # Replace with your Twilio number
