@@ -10,9 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-*** Ruby on Rails 
-*** Postrgess
-*** Twillo Account 
+* Ruby on Rails 
+* Postrgess
+* Twillo Account 
 
 
 ### Setup
