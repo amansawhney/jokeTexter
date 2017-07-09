@@ -1,25 +1,38 @@
-# README
+# Joke Texter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application that allows a user to input a phone number and then receive a joke.  However, the application also stores the user's phone number and then sends a joke to that user ever day using a rails runner vis Heroku App. 
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+What things you need to install the software and how to install them
 
-* Database creation
+*** Ruby on Rails 
+*** Postrgess
+*** Twillo Account 
 
-* Database initialization
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle
+rails db:setup 
+rails db:migrate
+figaro install
+```
+Add your twillo configuration to config/application.yml
 
-* Deployment instructions
 
-* ...
-# jokeTexter
+## Running
+
+```
+rails s
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
